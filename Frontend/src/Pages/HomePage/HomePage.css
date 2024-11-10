@@ -1,0 +1,55 @@
+.HomePageContainer{
+    height: 99vh;
+    display: flex;
+}
+.TextContainer{
+    flex: 1;
+    padding: 30px;
+    font-family: 'Alconica', sans-serif;
+}
+.Welcome{
+    padding: 15px;
+    color: white;
+    font-size: 2rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
+    border-radius: 25px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0px 1px 16px 3px rgba(255,255,255,0.75);
+    margin-bottom: 45px;
+
+}
+.CompanyName{
+    color: #b72656;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 3px 2px 6px rgba(189,30,83,0.85);
+}
+.CatchPhrase{
+    margin:auto;
+    border: 2px solid red;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    font-size: 2.2rem;
+    overflow: hidden;              
+    border-right: 2px solid black; 
+    white-space: nowrap;         
+    width: 0;                     
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+.ImageContainer{
+    flex: 1;
+}
+
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 80%; }
+  }
+  
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+  
