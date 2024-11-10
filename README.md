@@ -1,5 +1,5 @@
 We're the Certified Compiler Boyz and we want to present to you...
-Vybe Fynd3r!
+The Vybe Fynd3r!
 
 Inspiration
 We were inspired by the prospects of computer vision and being able to bridge that gap with the sounds of music. If we could connect our ideas together, we could convert vision into vibe.
