@@ -1,7 +1,7 @@
 .HomePageContainer{
     height: 99vh;
     display: flex;
-    background: radial-gradient(circle at 100px 200px, #3498db, #8e44ad);
+    background: radial-gradient(circle farthest-side at clamp(36.25rem, 2.917rem + 44.444vw, 56.25rem) clamp(21.875rem, 16.667rem + 6.944vw, 25rem),#7d7d7d,#030e19,#000912);
 
 }
 .TextContainer{
