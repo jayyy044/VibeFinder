@@ -1,7 +1,11 @@
 import React from "react";
 import './HomePage.css';
+import LogoPng from '../../assets/logo.png'
 
 const HomePage = () => {
+    const GrabImage = () => {
+        alert("Div clicked!");
+    }
     return(
         <>
             <div className="HomePageContainer">
@@ -15,8 +19,9 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className="ImageContainer">
-                    <h1 className="image">HEllllooo</h1>
-                    
+                    <div className="ImgCont" onClick={GrabImage}>
+                        <img src={LogoPng}/>
+                    </div>
                 </div>
             </div>
         </>

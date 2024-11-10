@@ -1,7 +1,7 @@
 .HomePageContainer{
     height: 99vh;
     display: flex;
-    background: radial-gradient(circle farthest-side at clamp(36.25rem, 2.917rem + 44.444vw, 56.25rem) clamp(21.875rem, 16.667rem + 6.944vw, 25rem),#7d7d7d,#030e19,#000912);
+    background: radial-gradient(circle farthest-side at 1000px 300px,#7d7d7d,#030e19,#000912);
 
 }
 .TextContainer{
@@ -35,10 +35,30 @@
     width: 0;                     
     animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
 }
-.ImageContainer{
+/* .ImageContainer{
     flex: 1;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+} */
+.ImgCont{
+    border-radius: 50%;
+    margin-top: 40px;
+    padding:50px;
+    margin-right: 25px;
+    border: 1px solid #7d7d7d;
+    transition: box-shadow 0.7s ease-in-out, border-color 0.7s ease-in-out;
+}
+.ImgCont:hover{
+    border-color: #b72656;
+    box-shadow: 0 0 15px 5px #b72656;
+
+}
+.ImageContainer img{
+    width:515px;
+    height: 400px;
+}
 
   @keyframes typing {
     from { width: 0; }
