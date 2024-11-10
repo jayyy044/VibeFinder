@@ -1,0 +1,98 @@
+Project Documentation: VibeFinder (Hand Gesture Recognition)
+
+Overview
+
+This project involves collecting hand gesture images, processing them to extract features, training a machine learning classifier, and using the trained classifier for real-time hand gesture recognition. The project is divided into several scripts and components, each responsible for a specific part of the workflow.
+
+Project Structure
+
+```
+hacked_beta/
+├── VibeFinder/
+│   ├── GestureModel/
+│   │   ├── collect_imgs.py
+│   │   ├── create_dataset.py
+│   │   ├── train_classifier.py
+│   │   ├── inference_classifier.py
+│   │   ├── data/
+│   │   │   ├── 0/
+│   │   │   ├── 1/
+│   │   │   ├── 2/
+│   │   ├── data.pickle
+│   │   ├── model.p
+├── Frontend/
+│   ├── index.html
+│   ├── ...
+├── requirements.txt
+```
+
+Scripts and Their Functionality
+
+1. `collect_imgs.py`			
+
+This script is used to collect images of different hand gestures using a webcam. The images are saved into separate class folders under the datadirectory.
+
+- DATA_DIR: Directory where the images are saved.
+- number_of_classes: Number of different hand gesture classes.
+- dataset_size: Number of images per class.
+
+The script captures images from the webcam and saves them into folders named `0`, `1`, and `2`, each containing 100 images of different hand gestures.
+
+2. ‘create_dataset.py’
+
+This script processes the collected images to extract hand landmarks using MediaPipe and saves the processed data into a pickle file (data.pickle).
+
+- mp_hands: MediaPipe Hands solution.
+- hands: MediaPipe Hands object for detecting hand landmarks.
+- DATA_DIR: Directory containing the collected images.
+
+In short, the script iterates through the images, extracts hand landmarks, and saves the processed data and labels into data.pickle
+
+3. ‘train_classifier.py’	
+
+This script trains a RandomForestClassifier using the processed data from ‘data.pickle’
+and saves the trained model into a pickle file (model.p).
+
+- data_dict: Dictionary containing the processed data and labels.
+- x_train, x_test, y_train, y_test: Training and testing datasets.
+- model: RandomForestClassifier object.
+- score: Accuracy score of the trained model.
+
+The script loads the data, splits it into training and testing sets, trains the classifier, evaluates its accuracy, and saves the trained model.
+
+4. `inference_classifier.py` 
+
+This script uses the trained model to perform real-time hand gesture recognition using a webcam.
+
+- model_dict: Dictionary containing the trained model.
+- model: Trained RandomForestClassifier object.
+- cap: VideoCapture object for capturing webcam feed.
+- mp_hands: MediaPipe Hands solution.
+- hands: MediaPipe Hands object for detecting hand landmarks.
+- labels_dict: Dictionary mapping class indices to gesture labels.
+
+The script captures frames from the webcam, processes them to extract hand landmarks, uses the trained model to predict the gesture, and displays the prediction on the video feed.
+
+Dependencies
+
+The project requires the following dependencies, which can be installed using `requirements.txt`:
+
+```
+opencv-python==4.7.0.68
+mediapipe==0.9.0.1
+scikit-learn==1.2.0
+```
+
+Usage
+
+1. Collect Images:  ```sh python VibeFinder/GestureModel/collect_imgs.py ```
+
+2. Create Dataset: ```sh python VibeFinder/GestureModel/create_dataset.py```
+
+3. Train Classifier: ```sh python VibeFinder/GestureModel/train_classifier.py```
+
+4. Run Inference:  ```sh python VibeFinder/GestureModel/inference_classifier.py ```
+
+Frontend
+
+The `Frontend` directory contains the HTML and other files for the user interface. The `index.html` file is the main entry point for the frontend.
