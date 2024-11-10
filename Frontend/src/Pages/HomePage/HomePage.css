@@ -1,38 +1,34 @@
 .HomePageContainer{
     height: 99vh;
     display: flex;
+    background: radial-gradient(circle at 100px 200px, #3498db, #8e44ad);
+
 }
 .TextContainer{
     flex: 1;
     padding: 30px;
-    font-family: 'Alconica', sans-serif;
+    font-family: 'Aclonica', sans-serif;
 }
 .Welcome{
     padding: 15px;
+    margin-top: 15px;
     color: white;
-    font-size: 2rem;
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 9.5px );
-    -webkit-backdrop-filter: blur( 9.5px );
-    border-radius: 25px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    box-shadow: 0px 1px 16px 3px rgba(255,255,255,0.75);
-    margin-bottom: 45px;
-
+    font-size: 4.2rem;
+    margin-bottom: 50px;
 }
 .CompanyName{
     color: #b72656;
-    font-size: 3rem;
+    margin-top: 40px;
+    font-size: 4.5rem;
     text-align: center;
-    text-shadow: 3px 2px 6px rgba(189,30,83,0.85);
+    text-shadow: 3px 4px 6px rgb(152, 16, 62);
 }
 .CatchPhrase{
-    margin:auto;
-    border: 2px solid red;
+    margin-left: 20px;
     font-style: italic;
     color: white;
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: 3rem;
     overflow: hidden;              
     border-right: 2px solid black; 
     white-space: nowrap;         
@@ -46,7 +42,7 @@
 
   @keyframes typing {
     from { width: 0; }
-    to { width: 80%; }
+    to { width: 70%; }
   }
   
   @keyframes blink-caret {
